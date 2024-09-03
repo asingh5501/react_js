@@ -54,11 +54,12 @@ html, body {
   background-color: #f4f4f4;
   padding: 10px;
   width: 100%;
+  height: auto;
   border-bottom: 1px solid #ddd;
   z-index: 1000; /* Ensure it stays above other content */
   text-align: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .footer-content {
@@ -97,6 +98,18 @@ html, body {
   padding: 10px;
 }
 
+.counter-main-div {
+  position: fixed;
+  top: 25%;
+  right: 9%;
+}
+
+.todo-main-div {
+  position: fixed;
+  top: 25%;
+  left: 2%;
+}
+
 h2 {
   margin: 0 0 10px;
   font-size: 1.5em;
@@ -106,4 +119,59 @@ h2 {
 p {
   margin: 0;
   color: #777;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-left: 5px;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+
+  .profile-card .main-div {
+    margin: 0px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    width: 45%;
+    margin: 10px auto;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1201px) {
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 30%;
+  }
 }

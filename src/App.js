@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import ProfileCard from './components/ProfileCard';
-import ProfileCard1 from './components/ProfileCard1';
+import React, { useEffect, useState } from 'react'
+import ProfileCard from './components/ProfileCard'
+import ProfileCard1 from './components/ProfileCard1'
 import '../src/components/ProfileCard'
-import Header from './components/Header';
+import Header from './components/Header'
+import Counter from './components/Counter'
+import TodoList from './components/TodoList'
 
 function App() {
     useEffect(() => {
-    //   first time render when this page is render
-    
-      return () => {
-        // second for destroy when user leave the page
-      }
+        //   first time render when this page is render
+
+        return () => {
+            // second for destroy when user leave the page
+        }
     }, ['update']) // when any change in state or props then update is called. if you put the any state then state is changed then it called..................
-    
+
     const profile = [
         {
             name: 'Shivam Dubey',
@@ -115,7 +117,7 @@ function App() {
             imageUrl: "https://img.freepik.com/premium-photo/male-portrait-barber-brown-color-suit-isolated-white-background_1029679-133710.jpg?w=826"
         },
     ]
-    const [activeTab, setActiveTab] = useState('home');
+    const [activeTab, setActiveTab] = useState('home')
     return (
         <div className='main-div'>
             <Header activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -139,11 +141,13 @@ function App() {
                     imageUrl={profile[2].imageUrl}
                 />
             </div>
+            {activeTab === 'about' && <Counter />}
+            {activeTab === 'contact' && <TodoList />}
             <footer className='footer-content'>
                 <h3>Lorem psum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae</h3>
             </footer>
         </div>
-    );
+    )
 }
 
-export default App;
+export default App
