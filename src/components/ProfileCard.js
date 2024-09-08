@@ -23,12 +23,12 @@ class ProfileCard extends Component {
     }
 
     render() {
-        const { name, desc, imageUrl, activeTab } = this.props;
+        const { name, desc, imageUrl, activeTab, title } = this.props;
         return (
             <div>
             {activeTab === 'home' ? <div className='profile-card'>
                 <ProfilePicture imageUrl={imageUrl} />
-                <ProfileDetails name={name} description={desc} />
+                <ProfileDetails name={name} description={desc} tit={title} />
             </div> : <div className='profile-card11'>
                 <p>about</p>
             {/* <ProfileCard1
