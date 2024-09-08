@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { counterContext } from '../context/context'
 
 const Counter = () => {
-  const [count, setCount] = useState(0)
+  const value = useContext(counterContext)
 
   const increment = () => {
-    setCount(count + 1)
+    value.setCount(value.count + 1)
   }
 
   const decrement = () => {
-    setCount(count - 1)
+    value.setCount(value.count - 1)
   }
 
   const reset = () => {
-    setCount(0)
+    value.setCount(0)
   }
 
   const buttonStyle = {
@@ -24,7 +25,7 @@ const Counter = () => {
 
   return (
     <div className='counter-main-div profile-card'>
-      <h2>Counter: {count}</h2>
+      <h2>Counter: {value.count}</h2>
       <button onClick={increment} style={buttonStyle}>Increment</button>
       <button onClick={decrement} style={buttonStyle}>Decrement</button>
       <button onClick={reset} style={buttonStyle}>Reset</button>
